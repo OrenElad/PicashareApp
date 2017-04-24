@@ -2,6 +2,11 @@
  * Created by oren on 18/04/2017.
  */
 import React, { Component } from 'react';
+// const FBSDK = require('react-native-fbsdk');
+// const {
+//   LoginButton,
+//   LoginManager
+// } = FBSDK;
 
 import {
   AppRegistry,
@@ -16,7 +21,29 @@ import {
   Alert
 } from 'react-native';
 
+LoginManager.logInWithReadPermissions(['public_profile']).then(
+  function(result) {
+    if (result.isCancelled) {
+      alert('Login was cancelled');
+    } else {
+      alert('Login was successful with permissions: '
+        + result.grantedPermissions.toString());
+    }
+  },
+  function(error) {
+    alert('Login failed with error: ' + error);
+  }
+);
+
 class Login extends Component {
+  constructor(props) {
+    super(props);
+  };
+
+  componentWillReceiveProps(nextProps){
+    alert(nextProps.facebook.addScope('user_birthday'));
+  };
+
   render() {
     return (
       <View style={{flex:1,top: 30, flexDirection:'column',justifyContent:'flex-start',alignItems:'center'}}>
@@ -26,6 +53,26 @@ class Login extends Component {
         </View>
         <Text style={{top: 20, fontSize:16, color: '#63a9d3', textAlign: 'center', fontWeight:'500', marginLeft: 10, marginRight: 10}}>join over 500,000 picashares and Use free amazing & powerful platform to make money today</Text>
         <Text style={{top: 100,fontSize:20,color: '#63a9d3'}}>Log-in By</Text>
+
+        {/*<View><LoginButton
+          publishPermissions={["public_profile"]}
+          onLoginFinished={
+            (error, result) => {
+              if (error) {
+                alert("Login failed with error: " + result.error);
+              } else if (result.isCancelled) {
+                alert("Login was cancelled");
+              } else {
+
+                alert(`Login ${JSON.stringify(result, null, 2)}`);
+              }
+            }
+          }
+          onLogoutFinished={(result) => {
+            alert("User logged out");
+            alert(`logout ${JSON.stringify(result, null, 2)}`);
+          }}/>
+        </View>*/}
       </View>
     );
   }

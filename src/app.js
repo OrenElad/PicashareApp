@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import Login from './containers/Login';
+import * as firebase from 'firebase';
 
 import {
   AppRegistry,
@@ -17,11 +18,34 @@ import {
   Alert
 } from 'react-native';
 
+
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.firebaseConfig = {
+      apiKey: "AIzaSyDOc48VJls4dUJ26DepEtmQw9JUssWSTw0",
+      authDomain: "picashare-7bc92.firebaseapp.com",
+      databaseURL: "https://picashare-7bc92.firebaseio.com",
+      projectId: "picashare-7bc92",
+      storageBucket: "picashare-7bc92.appspot.com",
+      messagingSenderId: "536716819192"
+    };
+
+    this.firebaseApp = firebase.initializeApp(this.firebaseConfig);
+    this.facebook = new firebase.auth.FacebookAuthProvider();
+    this.state = {};
+  };
+
+  componentWillMount(){
+
+
+  }
+
   render() {
     return (
       <View style={{flex:1}}>
-        <Login/>
+        <Login firebaseApp={this.firebaseApp} facebook={this.facebook}/>
       </View>
     );
   }
