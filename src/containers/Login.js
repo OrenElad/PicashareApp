@@ -2,11 +2,8 @@
  * Created by oren on 18/04/2017.
  */
 import React, { Component } from 'react';
-// const FBSDK = require('react-native-fbsdk');
-// const {
-//   LoginButton,
-//   LoginManager
-// } = FBSDK;
+import * as firebase from 'firebase';
+
 
 import {
   AppRegistry,
@@ -21,27 +18,40 @@ import {
   Alert
 } from 'react-native';
 
-LoginManager.logInWithReadPermissions(['public_profile']).then(
-  function(result) {
-    if (result.isCancelled) {
-      alert('Login was cancelled');
-    } else {
-      alert('Login was successful with permissions: '
-        + result.grantedPermissions.toString());
-    }
-  },
-  function(error) {
-    alert('Login failed with error: ' + error);
-  }
-);
 
 class Login extends Component {
   constructor(props) {
     super(props);
   };
 
+  componentWillMount(){
+    // firebase.auth().signInWithRedirect(this.props.facebook);
+    // firebase.auth().getRedirectResult().then(function(result) {
+    //   if (result.credential) {
+    //     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    //     var token = result.credential.accessToken;
+    //     alert(JSON.stringify(token, null, 2));
+    //     // ...
+    //   }
+    //   // The signed-in user info.
+    //   var user = result.user;
+    // }).catch(function(error) {
+    //   // Handle Errors here.
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   // The email of the user's account used.
+    //   var email = error.email;
+    //   // The firebase.auth.AuthCredential type that was used.
+    //   var credential = error.credential;
+    //   // ...
+    // });
+
+    alert(this.props.facebook.addScope('user_birthday'));
+
+  };
+
   componentWillReceiveProps(nextProps){
-    alert(nextProps.facebook.addScope('user_birthday'));
+
   };
 
   render() {

@@ -38,8 +38,7 @@ class App extends Component {
   };
 
   componentWillMount(){
-
-
+    //alert(JSON.stringify(this.facebook.addScope('public_profile'), null, 2));
   }
 
   render() {
