@@ -33,7 +33,6 @@ class App extends Component {
     };
 
     this.firebaseApp = firebase.initializeApp(this.firebaseConfig);
-    this.facebook = new firebase.auth.FacebookAuthProvider();
     this.state = {};
   };
 
@@ -44,7 +43,7 @@ class App extends Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <Login firebaseApp={this.firebaseApp} facebook={this.facebook}/>
+        <Login firebaseApp={this.firebaseApp}/>
       </View>
     );
   }
