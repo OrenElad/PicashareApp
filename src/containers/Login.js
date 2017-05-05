@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
+import { AccessToken, LoginManager } from 'react-native-fbsdk';
 
 
 import {
@@ -28,29 +29,7 @@ class Login extends Component {
   };
 
   componentWillMount(){
-    // firebase.auth().signInWithRedirect(this.props.facebook);
-    // firebase.auth().getRedirectResult().then(function(result) {
-    //   if (result.credential) {
-    //     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    //     var token = result.credential.accessToken;
-    //     alert(JSON.stringify(token, null, 2));
-    //     // ...
-    //   }
-    //   // The signed-in user info.
-    //   var user = result.user;
-    // }).catch(function(error) {
-    //   // Handle Errors here.
-    //   var errorCode = error.code;
-    //   var errorMessage = error.message;
-    //   // The email of the user's account used.
-    //   var email = error.email;
-    //   // The firebase.auth.AuthCredential type that was used.
-    //   var credential = error.credential;
-    //   // ...
-    // });
-
-    // alert(this.props.facebook.addScope('user_birthday'));
-
+    // ... somewhere in your login screen component
   };
 
   componentWillReceiveProps(nextProps){
@@ -61,25 +40,20 @@ class Login extends Component {
     switch(socialNetwork) {
       case 'FACEBOOK':
         // alert('FACEBOOK');
-        firebase.auth().signInWithRedirect(this.facebook);
-        firebase.auth().getRedirectResult()
-          .then(function(result) {
-            // alert(result.user);
-            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-            var token = result.credential.accessToken;
-            // The signed-in user info.
-            var user = result.user;
-            // ...
-          }).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-            // ...
-          });
+        LoginManager.logInWithReadPermissions(['public_profile']).then(
+          function(result) {
+            if (result.isCancelled) {
+              alert('Login cancelled');
+            } else {
+              alert('Login success with permissions: '
+                +JSON.stringify(result));
+            }
+          },
+          function(error) {
+            alert('Login fail with error: ' + error);
+          }
+        );
+
         break;
       case 'GOOGLE_PLUS':
         alert('GOOGLE_PLUS');
