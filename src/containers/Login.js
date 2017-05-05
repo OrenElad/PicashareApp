@@ -45,8 +45,10 @@ class Login extends Component {
             if (result.isCancelled) {
               alert('Login cancelled');
             } else {
-              alert('Login success with permissions: '
-                +JSON.stringify(result));
+              AccessToken.getCurrentAccessToken().then(
+                (data) => {
+                  alert(JSON.stringify(data, null, 2))
+                })
             }
           },
           function(error) {
