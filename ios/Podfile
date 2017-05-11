@@ -18,6 +18,7 @@ target 'Picashare' do
   pod 'Firebase/Messaging'
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
+  pod 'Google/SignIn'
   end
 
 target 'Picashare-tvOS' do

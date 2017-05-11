@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
+import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
 
 import {
@@ -30,6 +31,17 @@ class Login extends Component {
 
   componentWillMount(){
     // ... somewhere in your login screen component
+    GoogleSignin.configure({
+      iosClientId: '536716819192-onh2q8tlpib1fb4dun0fse5vvkalo7ug.apps.googleusercontent.com', // only for iOS
+    })
+    .then(() => {
+      // GoogleSignin.currentUserAsync().then((user) => {
+      //   console.log('USER', user);
+      //   this.setState({user: user});
+      // }).done();
+
+    })
+
   };
 
   componentWillReceiveProps(nextProps){
@@ -73,6 +85,16 @@ class Login extends Component {
         break;
       case 'GOOGLE_PLUS':
         alert('GOOGLE_PLUS');
+        GoogleSignin.signIn()
+          .then((user) => {
+            console.log(user);
+            this.setState({user: user});
+          })
+          .catch((err) => {
+            console.log('WRONG SIGNIN', err);
+          })
+          .done();
+
         break;
       case 'TWITTER':
         alert('TWITTER');

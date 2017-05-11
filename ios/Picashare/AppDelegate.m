@@ -9,11 +9,13 @@
 
 #import "AppDelegate.h"
 
-#import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <React/RCTBundleURLProvider.h>
+
 #import <Firebase.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
+#import <RNGoogleSignin/RNGoogleSignin.h>
 
 
 @implementation AppDelegate
@@ -55,4 +57,10 @@
   return handled;
 
 }
+  - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+    sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    return [RNGoogleSignin application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+  }
+
 @end

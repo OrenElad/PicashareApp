@@ -23,6 +23,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		256148E8F709469D9CA74ECD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB09019792B4F65B0EAFE68 /* SystemConfiguration.framework */; };
 		2B6475D65D9E47EB96640D2D /* libRCTFBSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4280D24EAF4A3F81A8D4DE /* libRCTFBSDK.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -39,6 +40,7 @@
 		53307B551A551BC51713C363 /* libPods-Picashare-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D21858E420F8F7D2794F3763 /* libPods-Picashare-tvOSTests.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		99F27EAFC0FD4344A2F16F68 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082DF74445A847A9AE12C426 /* AddressBook.framework */; };
 		BA498EE51EBBB217000B7C11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA498EE41EBBB217000B7C11 /* GoogleService-Info.plist */; };
 		BA498F121EBBC6A6000B7C11 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA498F041EBBB5D6000B7C11 /* libRNFirebase.a */; };
 		BA498F631EBBD0DD000B7C11 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA498F5F1EBBD0DD000B7C11 /* FBSDKShareKit.framework */; };
@@ -46,6 +48,9 @@
 		BA498F651EBBD0DD000B7C11 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA498F611EBBD0DD000B7C11 /* FBSDKCoreKit.framework */; };
 		BA498F661EBBD0DD000B7C11 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA498F621EBBD0DD000B7C11 /* Bolts.framework */; };
 		CB28AF951C52C30A73884592 /* libPods-Picashare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7A7735AC8EB4E6C195249A /* libPods-Picashare.a */; };
+		DF85BDEB276146858523D0BE /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8B5A76E1D5457FBFB10D05 /* libRNGoogleSignin.a */; };
+		EFA9DE4928D54634B097AEDB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4955E4DFE74B8389FD4F2A /* libz.tbd */; };
+		FD8F6EE63B444FCCBE51ADC0 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA55F4959414ED4B957F4A5 /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +257,20 @@
 			remoteGlobalIDString = 9350E0F11CE3B0920041D815;
 			remoteInfo = RCTFBSDK;
 		};
+		BAAABC1C1EC39E8B00DD674B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88AB4FA4C821481486591F95 /* RNGoogleSignin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FD355121D3E4A2900D06170;
+			remoteInfo = RNGoogleSignin;
+		};
+		BAAABC811EC4DAF600DD674B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 83CBBA2D1A601D0E00E9B192;
+			remoteInfo = React;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -264,6 +283,7 @@
 		00E356EE1AD99517003FC87E /* PicashareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicashareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* PicashareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicashareTests.m; sourceTree = "<group>"; };
+		082DF74445A847A9AE12C426 /* AddressBook.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Picashare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picashare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +296,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Picashare-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Picashare-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Picashare-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Picashare-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DB09019792B4F65B0EAFE68 /* SystemConfiguration.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		39B7DD3D775D9CB347983075 /* Pods-Picashare-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picashare-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Picashare-tvOS/Pods-Picashare-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3B4280D24EAF4A3F81A8D4DE /* libRCTFBSDK.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTFBSDK.a; sourceTree = "<group>"; };
 		43AE49E172665625D6252A42 /* Pods-Picashare-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picashare-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Picashare-tvOSTests/Pods-Picashare-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +307,8 @@
 		6DE0698198E4C66389574676 /* libPods-Picashare-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Picashare-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		88AB4FA4C821481486591F95 /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGoogleSignin.xcodeproj; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; };
+		BA4955E4DFE74B8389FD4F2A /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BA498EE41EBBB217000B7C11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA498EFF1EBBB5D4000B7C11 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		BA498F5F1EBBD0DD000B7C11 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -295,7 +318,9 @@
 		C09D459D75818BE388152755 /* Pods-Picashare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picashare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Picashare/Pods-Picashare.debug.xcconfig"; sourceTree = "<group>"; };
 		C4D5C61593FE40F21F8C9CA0 /* Pods-Picashare-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picashare-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Picashare-tvOS/Pods-Picashare-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		D21858E420F8F7D2794F3763 /* libPods-Picashare-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Picashare-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8B5A76E1D5457FBFB10D05 /* libRNGoogleSignin.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGoogleSignin.a; sourceTree = "<group>"; };
 		F2B27593125D44259412153A /* RCTFBSDK.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDK.xcodeproj; path = "../node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj"; sourceTree = "<group>"; };
+		FCA55F4959414ED4B957F4A5 /* SafariServices.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +354,11 @@
 				BA498F661EBBD0DD000B7C11 /* Bolts.framework in Frameworks */,
 				BA498F641EBBD0DD000B7C11 /* FBSDKLoginKit.framework in Frameworks */,
 				2B6475D65D9E47EB96640D2D /* libRCTFBSDK.a in Frameworks */,
+				DF85BDEB276146858523D0BE /* libRNGoogleSignin.a in Frameworks */,
+				EFA9DE4928D54634B097AEDB /* libz.tbd in Frameworks */,
+				FD8F6EE63B444FCCBE51ADC0 /* SafariServices.framework in Frameworks */,
+				256148E8F709469D9CA74ECD /* SystemConfiguration.framework in Frameworks */,
+				99F27EAFC0FD4344A2F16F68 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +469,7 @@
 		13B07FAE1A68108700A75B9A /* Picashare */ = {
 			isa = PBXGroup;
 			children = (
+				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				BA498EE41EBBB217000B7C11 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -489,6 +520,10 @@
 				5D7A7735AC8EB4E6C195249A /* libPods-Picashare.a */,
 				6DE0698198E4C66389574676 /* libPods-Picashare-tvOS.a */,
 				D21858E420F8F7D2794F3763 /* libPods-Picashare-tvOSTests.a */,
+				BA4955E4DFE74B8389FD4F2A /* libz.tbd */,
+				FCA55F4959414ED4B957F4A5 /* SafariServices.framework */,
+				2DB09019792B4F65B0EAFE68 /* SystemConfiguration.framework */,
+				082DF74445A847A9AE12C426 /* AddressBook.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -516,7 +551,6 @@
 			children = (
 				BA498EFF1EBBB5D4000B7C11 /* RNFirebase.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
-				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
 				00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */,
@@ -527,6 +561,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				F2B27593125D44259412153A /* RCTFBSDK.xcodeproj */,
+				88AB4FA4C821481486591F95 /* RNGoogleSignin.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -581,6 +616,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BAAABBFE1EC39E8B00DD674B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BAAABC1D1EC39E8B00DD674B /* libRNGoogleSignin.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -617,6 +660,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BAAABC821EC4DAF600DD674B /* PBXTargetDependency */,
 			);
 			name = Picashare;
 			productName = "Hello World";
@@ -752,6 +796,10 @@
 				{
 					ProductGroup = BA498F001EBBB5D4000B7C11 /* Products */;
 					ProjectRef = BA498EFF1EBBB5D4000B7C11 /* RNFirebase.xcodeproj */;
+				},
+				{
+					ProductGroup = BAAABBFE1EC39E8B00DD674B /* Products */;
+					ProjectRef = 88AB4FA4C821481486591F95 /* RNGoogleSignin.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -952,6 +1000,13 @@
 			fileType = archive.ar;
 			path = libRCTFBSDK.a;
 			remoteRef = BA498F3E1EBBCAB6000B7C11 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BAAABC1D1EC39E8B00DD674B /* libRNGoogleSignin.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNGoogleSignin.a;
+			remoteRef = BAAABC1C1EC39E8B00DD674B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1205,6 +1260,11 @@
 			target = 2D02E47A1E0B4A5D006451C7 /* Picashare-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
+		BAAABC821EC4DAF600DD674B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = React;
+			targetProxy = BAAABC811EC4DAF600DD674B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1231,12 +1291,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 				INFOPLIST_FILE = PicashareTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1256,12 +1318,14 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 				INFOPLIST_FILE = PicashareTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1288,6 +1352,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 				INFOPLIST_FILE = Picashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1315,6 +1380,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 				INFOPLIST_FILE = Picashare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1344,11 +1410,13 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 				INFOPLIST_FILE = "Picashare-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1379,11 +1447,13 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
+					"$(SRCROOT)/../node_modules/react-native-google-signin/ios/RNGoogleSignin/**",
 				);
 				INFOPLIST_FILE = "Picashare-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
@@ -1415,6 +1485,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Picashare-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1440,6 +1511,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.Picashare-tvOSTests";
