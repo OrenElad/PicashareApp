@@ -30,17 +30,10 @@ class Login extends Component {
   };
 
   componentWillMount(){
-    // ... somewhere in your login screen component
-    GoogleSignin.configure({
-      iosClientId: '536716819192-onh2q8tlpib1fb4dun0fse5vvkalo7ug.apps.googleusercontent.com', // only for iOS
-    })
-    .then(() => {
-      // GoogleSignin.currentUserAsync().then((user) => {
-      //   console.log('USER', user);
-      //   this.setState({user: user});
-      // }).done();
+    this._setupGoogleSignin();
 
-    })
+    // ... somewhere in your login screen component
+
 
   };
 
@@ -51,7 +44,6 @@ class Login extends Component {
   _login(socialNetwork){
     switch(socialNetwork) {
       case 'FACEBOOK':
-        // alert('FACEBOOK');
         LoginManager
           .logInWithReadPermissions(['public_profile', 'email', 'user_friends'])
           .then((result) => {
@@ -84,7 +76,6 @@ class Login extends Component {
 
         break;
       case 'GOOGLE_PLUS':
-        alert('GOOGLE_PLUS');
         GoogleSignin.signIn()
           .then((user) => {
             console.log(user);
@@ -94,7 +85,6 @@ class Login extends Component {
             console.log('WRONG SIGNIN', err);
           })
           .done();
-
         break;
       case 'TWITTER':
         alert('TWITTER');
@@ -104,6 +94,24 @@ class Login extends Component {
     }
 
   }
+
+  async _setupGoogleSignin() {
+    try {
+      await GoogleSignin.hasPlayServices({ autoResolve: true });
+      await GoogleSignin.configure({
+        scopes: ['https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/games'],
+        iosClientId: '536716819192-onh2q8tlpib1fb4dun0fse5vvkalo7ug.apps.googleusercontent.com'
+      });
+
+      const user = await GoogleSignin.currentUserAsync();
+      console.log(user);
+      this.setState({user});
+    }
+    catch(err) {
+      console.log("Google signin error", err.code, err.message);
+    }
+  }
+
   render() {
     return (
       <View style={{flex:1,top: 30, flexDirection:'column',justifyContent:'space-around',alignItems:'center'}}>
