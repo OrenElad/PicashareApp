@@ -100,7 +100,10 @@ class Login extends Component {
       await GoogleSignin.hasPlayServices({ autoResolve: true });
       await GoogleSignin.configure({
         scopes: ['https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/games'],
-        iosClientId: '536716819192-onh2q8tlpib1fb4dun0fse5vvkalo7ug.apps.googleusercontent.com'
+        iosClientId: '536716819192-onh2q8tlpib1fb4dun0fse5vvkalo7ug.apps.googleusercontent.com',
+        webClientId: '536716819192-onh2q8tlpib1fb4dun0fse5vvkalo7ug.apps.googleusercontent.com',
+        offlineAccess: false
+
       });
 
       const user = await GoogleSignin.currentUserAsync();
