@@ -24,8 +24,6 @@ import {
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.auth = firebase.auth();
-    this.facebook = new firebase.auth.FacebookAuthProvider();
 
   };
 
@@ -76,10 +74,23 @@ class Login extends Component {
 
         break;
       case 'GOOGLE_PLUS':
+        // GoogleSignin.signOut()
+        //   .then(() => {
+        //     console.log('out');
+        //   })
+        //   .catch((err) => {
+        //
+        //   });
+
         GoogleSignin.signIn()
           .then((user) => {
             console.log(user);
             this.setState({user: user});
+            const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken);
+            console.log('credential' +JSON.stringify(credential, null, 2));
+            // login with credential
+            return firebase.auth().signInWithCredential(credential);
+
           })
           .catch((err) => {
             console.log('WRONG SIGNIN', err);
