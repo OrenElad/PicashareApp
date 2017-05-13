@@ -2,7 +2,7 @@
  * Created by oren on 18/04/2017.
  */
 import React, { Component } from 'react';
-import Login from './containers/Login';
+import Login from './Login/containers/Login';
 import * as firebase from 'firebase';
 
 import {
