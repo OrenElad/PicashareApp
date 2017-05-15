@@ -2,8 +2,11 @@
  * Created by oren on 18/04/2017.
  */
 import React, { Component } from 'react';
-import Login from './Login/containers/Login';
+import Login from './Login/Login.container';
+import Categories from './Categories/Categories.container';
+
 import * as firebase from 'firebase';
+import { StackNavigator } from 'react-navigation';
 
 import {
   AppRegistry,
@@ -21,6 +24,10 @@ import {
 
 
 class App extends Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
+
   constructor(props) {
     super(props);
     this.firebaseConfig = {
@@ -41,12 +48,19 @@ class App extends Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={{flex:1}}>
-        <Login firebaseApp={this.firebaseApp}/>
+        <Login firebaseApp={this.firebaseApp} navigate={navigate}/>
       </View>
     );
   }
 }
 
-AppRegistry.registerComponent("Picashare", () => App);
+const Picashare = StackNavigator({
+  App: { screen: App },
+  Categories: { screen: Categories },
+});
+
+AppRegistry.registerComponent("Picashare", () => Picashare);

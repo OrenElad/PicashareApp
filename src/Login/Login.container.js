@@ -2,12 +2,13 @@
  * Created by oren on 18/04/2017.
  */
 import React, { Component } from 'react';
+import { StackNavigator } from 'react-navigation';
 
 
-import LoginPreview from '../components/LoginPreview';
-import GooglePlusLogin from '../components/GooglePlusLogin';
-import FacebookLogin from '../components/FacebookLogin';
-import TwitterLogin from '../components/TwitterLogin';
+import LoginPreview from './components/LoginPreview';
+import GooglePlusLogin from './components/GooglePlusLogin';
+import FacebookLogin from './components/FacebookLogin';
+import TwitterLogin from './components/TwitterLogin';
 
 import {
   AppRegistry,
@@ -24,6 +25,10 @@ import {
 
 
 class Login extends Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
+
   constructor(props) {
     super(props);
 
@@ -37,32 +42,13 @@ class Login extends Component {
 
   };
 
-  _login(socialNetwork){
-    switch(socialNetwork) {
-      case 'FACEBOOK':
-
-
-        break;
-      case 'GOOGLE_PLUS':
-
-
-        break;
-      case 'TWITTER':
-        alert('TWITTER');
-        break;
-      default:
-        alert('Default');
-    }
-
-  }
-
   render() {
     return (
       <View style={{flex:1,top: 30, flexDirection:'column',justifyContent:'space-around',alignItems:'center'}}>
         <LoginPreview/>
         <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
-        <FacebookLogin/>
-        <GooglePlusLogin/>
+        <FacebookLogin navigate={this.props.navigate}/>
+        <GooglePlusLogin navigate={this.props.navigate}/>
         <TwitterLogin/>
         </View>
       </View>
@@ -70,19 +56,9 @@ class Login extends Component {
   }
 }
 
+
 var styles = StyleSheet.create({
-  image: {
-    width: 75,
-    height: 75,
-    marginBottom:30,
-    left: 10
-  },
-  button: {
-    width: 50,
-    height: 50,
-    left: 5,
-    bottom:50
-  }
+
 });
 
 

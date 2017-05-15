@@ -61,6 +61,9 @@ class GooglePlusLogin extends Component {
         return firebase.auth().signInWithCredential(credential);
 
       })
+      .then(() => {
+        this.props.navigate('Categories');
+      })
       .catch((err) => {
         console.log('WRONG SIGNIN', err);
       })
