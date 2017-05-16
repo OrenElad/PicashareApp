@@ -24,9 +24,6 @@ import {
 
 
 class App extends Component {
-  static navigationOptions = {
-    title: 'Welcome',
-  };
 
   constructor(props) {
     super(props);
@@ -59,8 +56,28 @@ class App extends Component {
 }
 
 const Picashare = StackNavigator({
-  App: { screen: App },
-  Categories: { screen: Categories },
+  App: {
+    screen: App,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Categories: {
+    screen: Categories,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Select one category ',
+      headerStyle: {
+        backgroundColor: '#2697DD'
+      },
+      headerTitleStyle: {
+        color: '#F7FCFD'
+      }
+    })
+  },
+}, {
+  initialRouteName: 'App',
+  headerMode: 'screen',
 });
+
 
 AppRegistry.registerComponent("Picashare", () => Picashare);

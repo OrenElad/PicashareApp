@@ -21,10 +21,6 @@ import {
 
 
 class Categories extends Component {
-  static navigationOptions = {
-    title: 'Select one category ',
-  };
-
   constructor(props) {
     super(props);
     this.state = {};

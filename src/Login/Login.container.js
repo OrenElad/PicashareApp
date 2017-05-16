@@ -25,9 +25,6 @@ import {
 
 
 class Login extends Component {
-  static navigationOptions = {
-    title: 'Welcome',
-  };
 
   constructor(props) {
     super(props);
@@ -47,9 +44,9 @@ class Login extends Component {
       <View style={{flex:1,top: 30, flexDirection:'column',justifyContent:'space-around',alignItems:'center'}}>
         <LoginPreview/>
         <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
-        <FacebookLogin navigate={this.props.navigate}/>
-        <GooglePlusLogin navigate={this.props.navigate}/>
-        <TwitterLogin/>
+          <FacebookLogin navigate={this.props.navigate}/>
+          <GooglePlusLogin navigate={this.props.navigate}/>
+          <TwitterLogin navigate={this.props.navigate}/>
         </View>
       </View>
     );
