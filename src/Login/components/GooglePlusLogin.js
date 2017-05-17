@@ -74,6 +74,8 @@ class GooglePlusLogin extends Component {
     GoogleSignin.signOut()
       .then(() => {
         console.log('out');
+        this.props.actions.logout({authProvider:'Google', authData: 'logout'});
+
       })
       .catch((err) => {
 
@@ -82,7 +84,7 @@ class GooglePlusLogin extends Component {
   }
   render() {
     return (
-      <TouchableOpacity onPress={this._login.bind(this)}>
+      <TouchableOpacity onPress={this._logout.bind(this)}>
         <Image
           style={styles.button}
           source={require('../../assets/Login/google-plus-login.png')}

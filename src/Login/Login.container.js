@@ -2,13 +2,16 @@
  * Created by oren on 18/04/2017.
  */
 import React, { Component } from 'react';
-import { StackNavigator } from 'react-navigation';
-
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import {Map} from "immutable";
 
 import LoginPreview from './components/LoginPreview';
 import GooglePlusLogin from './components/GooglePlusLogin';
 import FacebookLogin from './components/FacebookLogin';
 import TwitterLogin from './components/TwitterLogin';
+
+import * as authActions from "../redux/auth/auth.action";
 
 import {
   AppRegistry,
@@ -22,6 +25,26 @@ import {
   //Icon,
   Alert
 } from 'react-native';
+
+const {AUTH_PROVIDERS} = require("../constants/appConfig").default;
+const actions = [authActions];
+function mapStateToProps(state) {
+  return {
+    ...state
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  const creators = Map()
+    .merge(...actions)
+    .filter(value => typeof value === 'function')
+    .toObject();
+
+  return {
+    actions: bindActionCreators(creators, dispatch),
+    dispatch
+  };
+}
 
 
 class Login extends Component {
@@ -44,9 +67,9 @@ class Login extends Component {
       <View style={{flex:1,top: 30, flexDirection:'column',justifyContent:'space-around',alignItems:'center'}}>
         <LoginPreview/>
         <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
-          <FacebookLogin navigate={this.props.navigate}/>
-          <GooglePlusLogin navigate={this.props.navigate}/>
-          <TwitterLogin navigate={this.props.navigate}/>
+          <FacebookLogin navigate={this.props.navigate} actions={this.props.actions}/>
+          <GooglePlusLogin navigate={this.props.navigate} actions={this.props.actions}/>
+          <TwitterLogin navigate={this.props.navigate} actions={this.props.actions}/>
         </View>
       </View>
     );
@@ -59,4 +82,4 @@ var styles = StyleSheet.create({
 });
 
 
-export default Login;
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

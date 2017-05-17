@@ -64,6 +64,7 @@ class FacebookLogin extends Component {
   }
 
   _logout(){}
+
   render() {
     return (
       <TouchableOpacity onPress={this._login.bind(this)}>

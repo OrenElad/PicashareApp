@@ -5,8 +5,15 @@ import React, { Component } from 'react';
 import Login from './Login/Login.container';
 import Categories from './Categories/Categories.container';
 
+import {Provider} from 'react-redux';
+import store from './redux/configureStore';
+
 import * as firebase from 'firebase';
-import { StackNavigator } from 'react-navigation';
+import {
+  StackNavigator,
+  DrawerNavigator
+} from 'react-navigation';
+
 
 import {
   AppRegistry,
@@ -48,10 +55,13 @@ class App extends Component {
     const { navigate } = this.props.navigation;
 
     return (
-      <View style={{flex:1}}>
-        <Login firebaseApp={this.firebaseApp} navigate={navigate}/>
-      </View>
-    );
+      <Provider store={store}>
+        <View style={{flex:1}}>
+          <Login firebaseApp={this.firebaseApp} navigate={navigate}/>
+        </View>
+      </Provider>
+
+        );
   }
 }
 
