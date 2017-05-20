@@ -42,7 +42,6 @@ class GooglePlusLogin extends Component {
       });
 
       const user = await GoogleSignin.currentUserAsync();
-      console.log(user);
       this.setState({user});
     }
     catch(err) {
@@ -50,25 +49,41 @@ class GooglePlusLogin extends Component {
     }
   }
 
-  _login(){
-    GoogleSignin.signIn()
-      .then((user) => {
-        console.log(user);
-        this.setState({user: user});
-        const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken);
-        console.log('credential' +JSON.stringify(credential, null, 2));
-        // login with credential
-        return firebase.auth().signInWithCredential(credential);
-
-      })
-      .then(() => {
-        this.props.navigate('Categories');
-      })
-      .catch((err) => {
-        console.log('WRONG SIGNIN', err);
-      })
-      .done();
+  async _login() {
+    try {
+      const user = await GoogleSignin.signIn();
+      const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken);
+      const userData = await firebase.auth().signInWithCredential(credential);
+      console.log('User data\n' + JSON.stringify(userData, null, 2));
+      this.props.navigate('Categories');
+      this.props.actions.login({authProvider: userData.providerId, authData: userData});
+    } catch (err) {
+      console.log('WRONG SIGNIN', err);
+    }
+    ;
   }
+
+  //   GoogleSignin.signIn()
+  //     .then((user) => {
+  //       console.log(user);
+  //       this.setState({user: user});
+  //       const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken);
+  //       console.log('Credential\n' +JSON.stringify(credential, null, 2));
+  //
+  //       // login with credential
+  //       return firebase.auth().signInWithCredential(credential);
+  //
+  //     })
+  //     .then((res) => {
+  //       this.props.actions.login({authProvider:res.providerId, authData: res});
+  //
+  //       this.props.navigate('Categories');
+  //     })
+  //     .catch((err) => {
+  //       console.log('WRONG SIGNIN', err);
+  //     })
+  //     .done();
+  // }
 
   _logout(){
     GoogleSignin.signOut()
@@ -84,7 +99,7 @@ class GooglePlusLogin extends Component {
   }
   render() {
     return (
-      <TouchableOpacity onPress={this._logout.bind(this)}>
+      <TouchableOpacity onPress={this._login.bind(this)}>
         <Image
           style={styles.button}
           source={require('../../assets/Login/google-plus-login.png')}

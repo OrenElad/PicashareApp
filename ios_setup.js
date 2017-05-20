@@ -3,7 +3,7 @@
  A node script to help set up FBSDK frameworks for use with https://github.com/facebook/react-native-fbsdk
  after you have already run `rnpm install react-native-fbsdk`.
 
- Note that you need to create a Facebook App in https://developers.facebook.com/
+ Note that you need to create a Facebook Picashare in https://developers.facebook.com/
  and get the Facebook APP ID and Facebook APP Name in order to set up the Info.plist.
 
  Usage:
@@ -23,7 +23,7 @@ const AdmZip = require('adm-zip');
 const frameworkDir = 'ios/Frameworks/';
 const frameworkUrl = 'https://origincache.facebook.com/developers/resources/?id=facebook-ios-sdk-current.zip';
 
-// Get Facebook App ID and App Name.
+// Get Facebook Picashare ID and Picashare Name.
 if (process.argv.length <= 3) {
     console.log('Usage: ' + __filename + ' <APPID> <APPNAME>');
     process.exit(-1);

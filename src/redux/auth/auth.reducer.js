@@ -22,7 +22,11 @@ export default function authReducer(state = initialState, action) {
   if (!(state instanceof InitialState)) return initialState.merge(state);
   switch (action.type) {
     case LOGIN_REQUEST:
-      return state.set("authProvider", action.data.authProvider);
+      state.set("authProvider", action.data);
+      setTimeout(() => {
+        console.log(`REDUCER STATE - ${JSON.stringify(state, null, 2)}`);
+      },1000);
+      return state;
     case LOGOUT_REQUEST:
       state.set("authProvider", action.data.authProvider);
       setTimeout(() => {

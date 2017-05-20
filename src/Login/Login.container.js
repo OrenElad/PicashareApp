@@ -59,7 +59,7 @@ class Login extends Component {
   };
 
   componentWillReceiveProps(nextProps){
-
+      // nextProps !== this.props && console.log(`--->>>> ${nextProps}`);
   };
 
   render() {

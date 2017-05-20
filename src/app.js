@@ -11,7 +11,7 @@ import store from './redux/configureStore';
 import * as firebase from 'firebase';
 import {
   StackNavigator,
-  DrawerNavigator
+  DrawerNavigator,
 } from 'react-navigation';
 
 
@@ -90,4 +90,5 @@ const Picashare = StackNavigator({
 });
 
 
-AppRegistry.registerComponent("Picashare", () => Picashare);
+AppRegistry.registerComponent('Picashare', () => Picashare);
+

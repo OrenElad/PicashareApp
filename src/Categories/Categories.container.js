@@ -3,7 +3,12 @@
  */
 
 import React, { Component } from 'react';
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import {Map} from "immutable";
+
 import { StackNavigator } from 'react-navigation';
+import * as authActions from "../redux/categories/categories.action";
 
 import {
   AppRegistry,
@@ -19,6 +24,24 @@ import {
 } from 'react-native';
 
 
+const actions = [authActions];
+function mapStateToProps(state) {
+  return {
+    ...state
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  const creators = Map()
+    .merge(...actions)
+    .filter(value => typeof value === 'function')
+    .toObject();
+
+  return {
+    actions: bindActionCreators(creators, dispatch),
+    dispatch
+  };
+}
 
 class Categories extends Component {
   constructor(props) {
@@ -29,6 +52,11 @@ class Categories extends Component {
   componentWillMount(){
 
   };
+
+  componentWillReceiveProps(nextProps){
+    // nextProps !== this.props && console.log(`--->>>> ${nextProps}`);
+  };
+
 
   render() {
     return (
@@ -45,4 +73,4 @@ var styles = StyleSheet.create({
 });
 
 
-export default Categories;
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);

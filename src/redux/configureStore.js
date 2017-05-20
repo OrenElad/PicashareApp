@@ -3,6 +3,7 @@
  */
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import devToolsEnhancer from 'remote-redux-devtools';
 
 import rootReducer from './root.reducer';
 import AuthInitialState from './auth/authInitialState';

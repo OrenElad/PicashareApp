@@ -16,6 +16,7 @@ const {
 } = require("../actionTypes").default;
 
 export function login(data, socialData) {
+  console.log(`ACTION LOGIN - ${JSON.stringify(data, null, 2)}`);
   return {
     type: LOGIN_REQUEST,
     data
