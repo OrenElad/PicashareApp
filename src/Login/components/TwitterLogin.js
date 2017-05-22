@@ -2,9 +2,9 @@
  * Created by oren on 13/05/2017.
  */
 import React, { Component } from 'react';
-import * as firebase from 'firebase';
 
 import {
+  NativeModules,
   AppRegistry,
   StyleSheet,
   Text,
@@ -17,6 +17,9 @@ import {
   Alert
 } from 'react-native';
 
+// var { NativeModules } = React;
+
+const { TwitterSignin } = NativeModules;
 
 
 class TwitterLogin extends Component {
@@ -31,7 +34,13 @@ class TwitterLogin extends Component {
 
 
   _login(){
-    alert('Twitter Login');
+    TwitterSignin.logIn('Xw6ctfP8ha7R6m0A36saR1PXm', '2ja2VySCMTKOP0sZ7W2b2LDwoSL5U0TqMEzDdvbGiZ4e52cw0t', (error, loginData) => {
+      if (!error) {
+        console.log('Twitter logedin: ' +loginData);
+      } else {
+        Alert.alert('Invalid login', 'Unable to login');
+      }
+    });
 
   }
 

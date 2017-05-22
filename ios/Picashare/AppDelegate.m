@@ -11,6 +11,8 @@
 
 #import <React/RCTRootView.h>
 #import <React/RCTBundleURLProvider.h>
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
 
 #import <Firebase.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -40,6 +42,7 @@
   [FIRApp configure];
   [[FBSDKApplicationDelegate sharedInstance] application:application
                            didFinishLaunchingWithOptions:launchOptions];
+  [Fabric with:@[[Twitter class]]];
 
   return YES;
 }
