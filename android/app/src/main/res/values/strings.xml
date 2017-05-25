@@ -1,4 +1,5 @@
 <resources>
 
     <string name="app_name">Picashare</string>
+    <string name="facebook_app_id">358317097861350</string>
 </resources>
