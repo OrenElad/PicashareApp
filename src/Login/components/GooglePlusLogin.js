@@ -59,8 +59,7 @@ class GooglePlusLogin extends Component {
       this.props.actions.login({authProvider: userData.providerId, authData: userData});
     } catch (err) {
       console.log('WRONG SIGNIN', err);
-    }
-    ;
+    };
   }
 
   //   GoogleSignin.signIn()

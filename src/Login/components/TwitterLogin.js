@@ -2,6 +2,7 @@
  * Created by oren on 13/05/2017.
  */
 import React, { Component } from 'react';
+import * as firebase from 'firebase';
 
 import {
   NativeModules,
@@ -16,8 +17,6 @@ import {
   //Icon,
   Alert
 } from 'react-native';
-
-// var { NativeModules } = React;
 
 const { TwitterSignin } = NativeModules;
 
@@ -36,7 +35,20 @@ class TwitterLogin extends Component {
   _login(){
     TwitterSignin.logIn('Xw6ctfP8ha7R6m0A36saR1PXm', '2ja2VySCMTKOP0sZ7W2b2LDwoSL5U0TqMEzDdvbGiZ4e52cw0t', (error, loginData) => {
       if (!error) {
-        console.log('Twitter logedin: ' +loginData);
+        const credential = firebase.auth.TwitterAuthProvider.credential(loginData.authToken, loginData.authTokenSecret);
+        console.log('Twitter logedin: ' +JSON.stringify(loginData, null, 2));
+        console.log('credential' + JSON.stringify(credential, null, 2));
+        firebase.auth().signInWithCredential(credential)
+          .then((currentUser) => {
+            if (currentUser === 'cancelled') {
+              console.log('Login cancelled');
+            } else {
+              // now signed in
+              console.log(`the user: ${JSON.stringify(currentUser.toJSON())}`);
+              // this.props.navigation('Categories');
+            }
+          }).catch((err) => console.log(`Twitter Error: ${err}`));
+
       } else {
         Alert.alert('Invalid login', 'Unable to login');
       }
