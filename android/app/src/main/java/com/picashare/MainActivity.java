@@ -1,7 +1,8 @@
 package com.picashare;
 
 import com.facebook.react.ReactActivity;
-import com.psykar.cookiemanager.CookieManagerPackage;
+import android.content.Intent;
+
 
 public class MainActivity extends ReactActivity {
 
@@ -13,4 +14,10 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "Picashare";
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        MainApplication.getCallbackManager().onActivityResult(requestCode, resultCode, data);
+    }
+
 }

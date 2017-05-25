@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "536716819192",
+    "firebase_url": "https://picashare-7bc92.firebaseio.com",
+    "project_id": "picashare-7bc92",
+    "storage_bucket": "picashare-7bc92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536716819192:android:30a9a3e6380581d3",
+        "android_client_info": {
+          "package_name": "com.picashare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536716819192-63ifdvune9ct688rdkhp0tp4bu6mauut.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8ooK6lHo3JHk_1oxy9xRy5ITdsvrPDGk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
