@@ -56,39 +56,17 @@ class GooglePlusLogin extends Component {
       const userData = await firebase.auth().signInWithCredential(credential);
       console.log('User data\n' + JSON.stringify(userData, null, 2));
       this.props.navigate('Categories');
-      this.props.actions.login({authProvider: userData.providerId, authData: userData});
+      // this.props.actions.login({authProvider: userData.providerId, authData: userData});
     } catch (err) {
       console.log('WRONG SIGNIN', err);
     };
   }
 
-  //   GoogleSignin.signIn()
-  //     .then((user) => {
-  //       console.log(user);
-  //       this.setState({user: user});
-  //       const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken);
-  //       console.log('Credential\n' +JSON.stringify(credential, null, 2));
-  //
-  //       // login with credential
-  //       return firebase.auth().signInWithCredential(credential);
-  //
-  //     })
-  //     .then((res) => {
-  //       this.props.actions.login({authProvider:res.providerId, authData: res});
-  //
-  //       this.props.navigate('Categories');
-  //     })
-  //     .catch((err) => {
-  //       console.log('WRONG SIGNIN', err);
-  //     })
-  //     .done();
-  // }
-
   _logout(){
     GoogleSignin.signOut()
       .then(() => {
         console.log('out');
-        this.props.actions.logout({authProvider:'Google', authData: 'logout'});
+        // this.props.actions.logout({authProvider:'Google', authData: 'logout'});
 
       })
       .catch((err) => {

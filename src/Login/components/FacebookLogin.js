@@ -50,7 +50,7 @@ class FacebookLogin extends Component {
       } else {
         // now signed in
         console.log(`the user: ${JSON.stringify(currentUser.toJSON())}`);
-        this.props.navigation('Categories');
+        this.props.navigate('Categories');
       }
     } catch (err) {
       console.log(`Login fail with error: ${error}`);
