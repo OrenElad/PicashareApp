@@ -44,47 +44,18 @@ class FacebookLogin extends Component {
       const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
       console.log('credential' + JSON.stringify(credential, null, 2));
       // login with credential
-      const currentUser = await  firebase.auth().signInWithCredential(credential);
-      if (currentUser === 'cancelled') {
+      const userData = await  firebase.auth().signInWithCredential(credential);
+      if (userData === 'cancelled') {
         console.log('Login cancelled');
       } else {
         // now signed in
-        console.log(`the user: ${JSON.stringify(currentUser.toJSON())}`);
+        console.log(`the user: ${JSON.stringify(userData.toJSON())}`);
         this.props.navigate('Categories');
       }
     } catch (err) {
       console.log(`Login fail with error: ${error}`);
     }
   }
-    // {/*LoginManager.logInWithReadPermissions(['public_profile', 'email', 'user_friends'])*/}
-    //   {/*.then((result) => {*/}
-    //     {/*if (result.isCancelled) {*/}
-    //       {/*return Promise.resolve('cancelled');*/}
-    //     {/*}*/}
-    //     {/*console.log(`Login success with permissions: ${JSON.stringify(result, null, 2)}`);*/}
-    //     {/*// get the access token*/}
-    //     {/*return AccessToken.getCurrentAccessToken();*/}
-    //   {/*})*/}
-    //   .then(data => {
-    //     // create a new firebase credential with the token
-    //     const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
-    //     console.log('credential' +JSON.stringify(credential, null, 2));
-    //     // login with credential
-    //     return firebase.auth().signInWithCredential(credential);
-    //   })
-    //   .then((currentUser) => {
-    //     if (currentUser === 'cancelled') {
-    //       console.log('Login cancelled');
-    //     } else {
-    //       // now signed in
-    //       console.log(`the user: ${JSON.stringify(currentUser.toJSON())}`);
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log(`Login fail with error: ${error}`);
-    //   });
-
-  // }
 
   _logout(){}
 

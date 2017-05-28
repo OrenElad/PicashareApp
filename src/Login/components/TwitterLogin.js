@@ -20,6 +20,7 @@ import {
 
 const { TwitterSignin } = NativeModules;
 
+import AUTH_PROVIDERS from '../../constants/appConfig';
 
 class TwitterLogin extends Component {
   constructor(props) {
@@ -32,31 +33,49 @@ class TwitterLogin extends Component {
   };
 
 
-  _login(){
-    TwitterSignin.logIn('Xw6ctfP8ha7R6m0A36saR1PXm', '2ja2VySCMTKOP0sZ7W2b2LDwoSL5U0TqMEzDdvbGiZ4e52cw0t', (error, loginData) => {
-      if (!error) {
-        const credential = firebase.auth.TwitterAuthProvider.credential(loginData.authToken, loginData.authTokenSecret);
-        console.log('Twitter logedin: ' +JSON.stringify(loginData, null, 2));
-        console.log('credential' + JSON.stringify(credential, null, 2));
-        firebase.auth().signInWithCredential(credential)
-          .then((currentUser) => {
-            if (currentUser === 'cancelled') {
-              console.log('Login cancelled');
-            } else {
-              // now signed in
-              console.log(`the user: ${JSON.stringify(currentUser.toJSON())}`);
-              // this.props.navigation('Categories');
-            }
-          }).catch((err) => console.log(`Twitter Error: ${err}`));
+  async _login(){
+    let token = '',
+        secret = '',
+        credential = '';
 
-      } else {
-        Alert.alert('Invalid login', 'Unable to login');
-      }
+    let twitterPromise = new Promise((resolve, reject) => {
+      console.log('1111');
+      TwitterSignin.logIn(AUTH_PROVIDERS.TWITTER.CONSUMER_KEY, AUTH_PROVIDERS.TWITTER.CONSUMER_SECRET, (error, loginData) => {
+        console.log('2222');
+        if (!error) {
+          token = loginData.authToken;
+          secret = loginData.authTokenSecret;
+          console.log('login data' + token + ' - ' +secret);
+          resolve(token, secret);
+        } else {
+          Alert.alert('Invalid login', 'Unable to login');
+          reject(error +'\nUnable to login');
+        }
+      });
     });
+
+    try {
+      await twitterPromise;
+      console.log('3333');
+      if(token && secret) credential = firebase.auth.TwitterAuthProvider.credential(token, secret);
+      console.log('credential' + JSON.stringify(credential, null, 2));
+      const userData = await firebase.auth().signInWithCredential(credential);
+      console.log('userData' + JSON.stringify(userData.toJSON()));
+      if (userData === 'cancelled') {
+        console.log('Login cancelled');
+      } else {
+        // now signed in
+        console.log(`the user: ${JSON.stringify(userData.toJSON())}`);
+        this.props.navigate('Categories');
+      }
+    } catch(err) {
+      console.log(`Twitter Error: ${err}`);
+    }
 
   }
 
   _logout(){}
+
   render() {
     return (
       <TouchableOpacity onPress={this._login.bind(this)}>

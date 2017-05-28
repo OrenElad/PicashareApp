@@ -1,4 +1,5 @@
 PODS:
+  - Fabric (1.6.11)
   - Firebase/Analytics (3.17.0):
     - Firebase/Core
   - Firebase/AppIndexing (3.17.0):
@@ -94,8 +95,13 @@ PODS:
   - GTMSessionFetcher/Full (1.1.9):
     - GTMSessionFetcher/Core (= 1.1.9)
   - Protobuf (3.2.1)
+  - TwitterCore (2.8.0):
+    - Fabric
+  - TwitterKit (2.8.1):
+    - TwitterCore (>= 2.8)
 
 DEPENDENCIES:
+  - Fabric
   - Firebase/Analytics
   - Firebase/AppIndexing
   - Firebase/Auth
@@ -107,8 +113,10 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - Firebase/Storage
   - Google/SignIn
+  - TwitterKit
 
 SPEC CHECKSUMS:
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseAppIndexing: adf2f3b14b6828f1d4c539fc72434962cf29ea2c
@@ -127,7 +135,9 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+  TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
+  TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
 
-PODFILE CHECKSUM: caafcba440f729176db3f263aa46baa80e39d023
+PODFILE CHECKSUM: dd33d73f754649ee53e707d5ce3e97fe641233e8
 
 COCOAPODS: 1.2.1

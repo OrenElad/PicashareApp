@@ -48,11 +48,7 @@
 		BA498F641EBBD0DD000B7C11 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA498F601EBBD0DD000B7C11 /* FBSDKLoginKit.framework */; };
 		BA498F651EBBD0DD000B7C11 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA498F611EBBD0DD000B7C11 /* FBSDKCoreKit.framework */; };
 		BA498F661EBBD0DD000B7C11 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA498F621EBBD0DD000B7C11 /* Bolts.framework */; };
-		BA92BBDC1ED210B000108527 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA92BBD81ED210B000108527 /* Fabric.framework */; };
-		BA92BBDD1ED210B000108527 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA92BBD91ED210B000108527 /* TwitterKit.framework */; };
-		BA92BBDE1ED210B000108527 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA92BBDA1ED210B000108527 /* TwitterKitResources.bundle */; };
-		BA92BBDF1ED210B000108527 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA92BBDB1ED210B000108527 /* TwitterCore.framework */; };
-		BA92BBE21ED2132500108527 /* TwitterSignin.m in Sources */ = {isa = PBXBuildFile; fileRef = BA92BBE11ED2132500108527 /* TwitterSignin.m */; };
+		BABAD5CD1EDB576D003B7A1E /* TwitterSignin.m in Sources */ = {isa = PBXBuildFile; fileRef = BABAD5CC1EDB576D003B7A1E /* TwitterSignin.m */; };
 		CB28AF951C52C30A73884592 /* libPods-Picashare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7A7735AC8EB4E6C195249A /* libPods-Picashare.a */; };
 		DF85BDEB276146858523D0BE /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8B5A76E1D5457FBFB10D05 /* libRNGoogleSignin.a */; };
 		EFA9DE4928D54634B097AEDB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4955E4DFE74B8389FD4F2A /* libz.tbd */; };
@@ -277,13 +273,6 @@
 			remoteGlobalIDString = 83CBBA2D1A601D0E00E9B192;
 			remoteInfo = React;
 		};
-		BAABAAA21ECB873000C33618 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7F2DE727D6E64EAFAE07CF82 /* RNCookieManagerIOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1BD725DA1CF77A8B005DBD79;
-			remoteInfo = RNCookieManagerIOS;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -320,7 +309,6 @@
 		68D55700EC257046B51B6072 /* Pods-Picashare-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picashare-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Picashare-tvOSTests/Pods-Picashare-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DE0698198E4C66389574676 /* libPods-Picashare-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Picashare-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		7F2DE727D6E64EAFAE07CF82 /* RNCookieManagerIOS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCookieManagerIOS.xcodeproj; path = "../node_modules/react-native-cookies/RNCookieManagerIOS.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		88AB4FA4C821481486591F95 /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGoogleSignin.xcodeproj; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; };
 		BA4955E4DFE74B8389FD4F2A /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -330,12 +318,8 @@
 		BA498F601EBBD0DD000B7C11 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		BA498F611EBBD0DD000B7C11 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		BA498F621EBBD0DD000B7C11 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
-		BA92BBD81ED210B000108527 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		BA92BBD91ED210B000108527 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
-		BA92BBDA1ED210B000108527 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
-		BA92BBDB1ED210B000108527 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
-		BA92BBE01ED2132500108527 /* TwitterSignin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSignin.h; path = "../node_modules/react-native-twitter-signin/ios/TwitterSignin/TwitterSignin.h"; sourceTree = "<group>"; };
-		BA92BBE11ED2132500108527 /* TwitterSignin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterSignin.m; path = "../node_modules/react-native-twitter-signin/ios/TwitterSignin/TwitterSignin.m"; sourceTree = "<group>"; };
+		BABAD5CB1EDB576D003B7A1E /* TwitterSignin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSignin.h; path = "../node_modules/react-native-twitter-signin/ios/TwitterSignin/TwitterSignin.h"; sourceTree = "<group>"; };
+		BABAD5CC1EDB576D003B7A1E /* TwitterSignin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterSignin.m; path = "../node_modules/react-native-twitter-signin/ios/TwitterSignin/TwitterSignin.m"; sourceTree = "<group>"; };
 		C09D459D75818BE388152755 /* Pods-Picashare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picashare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Picashare/Pods-Picashare.debug.xcconfig"; sourceTree = "<group>"; };
 		C4D5C61593FE40F21F8C9CA0 /* Pods-Picashare-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picashare-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Picashare-tvOS/Pods-Picashare-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		D21858E420F8F7D2794F3763 /* libPods-Picashare-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Picashare-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -368,9 +352,7 @@
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
-				BA92BBDD1ED210B000108527 /* TwitterKit.framework in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
-				BA92BBDF1ED210B000108527 /* TwitterCore.framework in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				CB28AF951C52C30A73884592 /* libPods-Picashare.a in Frameworks */,
@@ -380,7 +362,6 @@
 				DF85BDEB276146858523D0BE /* libRNGoogleSignin.a in Frameworks */,
 				EFA9DE4928D54634B097AEDB /* libz.tbd in Frameworks */,
 				FD8F6EE63B444FCCBE51ADC0 /* SafariServices.framework in Frameworks */,
-				BA92BBDC1ED210B000108527 /* Fabric.framework in Frameworks */,
 				256148E8F709469D9CA74ECD /* SystemConfiguration.framework in Frameworks */,
 				99F27EAFC0FD4344A2F16F68 /* AddressBook.framework in Frameworks */,
 				57F13F4E9ED64C6C842CB026 /* libRNCookieManagerIOS.a in Frameworks */,
@@ -574,8 +555,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				BA92BBE01ED2132500108527 /* TwitterSignin.h */,
-				BA92BBE11ED2132500108527 /* TwitterSignin.m */,
+				BABAD5CB1EDB576D003B7A1E /* TwitterSignin.h */,
+				BABAD5CC1EDB576D003B7A1E /* TwitterSignin.m */,
 				BA498EFF1EBBB5D4000B7C11 /* RNFirebase.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -589,7 +570,6 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				F2B27593125D44259412153A /* RCTFBSDK.xcodeproj */,
 				88AB4FA4C821481486591F95 /* RNGoogleSignin.xcodeproj */,
-				7F2DE727D6E64EAFAE07CF82 /* RNCookieManagerIOS.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -606,10 +586,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				BA92BBD81ED210B000108527 /* Fabric.framework */,
-				BA92BBD91ED210B000108527 /* TwitterKit.framework */,
-				BA92BBDA1ED210B000108527 /* TwitterKitResources.bundle */,
-				BA92BBDB1ED210B000108527 /* TwitterCore.framework */,
 				13B07FAE1A68108700A75B9A /* Picashare */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* PicashareTests */,
@@ -652,14 +628,6 @@
 			isa = PBXGroup;
 			children = (
 				BAAABC1D1EC39E8B00DD674B /* libRNGoogleSignin.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BAABAA861ECB873000C33618 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BAABAAA31ECB873000C33618 /* libRNCookieManagerIOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -833,10 +801,6 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
-				},
-				{
-					ProductGroup = BAABAA861ECB873000C33618 /* Products */;
-					ProjectRef = 7F2DE727D6E64EAFAE07CF82 /* RNCookieManagerIOS.xcodeproj */;
 				},
 				{
 					ProductGroup = BA498F001EBBB5D4000B7C11 /* Products */;
@@ -1054,13 +1018,6 @@
 			remoteRef = BAAABC1C1EC39E8B00DD674B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		BAABAAA31ECB873000C33618 /* libRNCookieManagerIOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNCookieManagerIOS.a;
-			remoteRef = BAABAAA21ECB873000C33618 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1075,7 +1032,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA92BBDE1ED210B000108527 /* TwitterKitResources.bundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				BA498EE51EBBB217000B7C11 /* GoogleService-Info.plist in Resources */,
@@ -1235,7 +1191,7 @@
 		};
 		BA92BBBC1ED20EAA00108527 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -1244,7 +1200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run e57dbf9c6a935b271efd992488bcbacb35ec2cb6 dfb7af2af2b41a240f2852793f9685ef13787e042e4d71d251d8e1b63a5e703d";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f8f7063c8996c8b07617a6365f9a3ba8c6454815 4cb75b754b2afcda74b41698d4ef82581628ecc611dd2b250765011932101312";
 		};
 		CA4573BB7D4239870658746E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1291,7 +1247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA92BBE21ED2132500108527 /* TwitterSignin.m in Sources */,
+				BABAD5CD1EDB576D003B7A1E /* TwitterSignin.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);

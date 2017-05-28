@@ -19,7 +19,10 @@ target 'Picashare' do
   pod 'Firebase/RemoteConfig'
   pod 'Firebase/Storage'
   pod 'Google/SignIn'
-  end
+  pod 'Fabric'
+  pod 'TwitterKit'
+
+end
 
 target 'Picashare-tvOS' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
