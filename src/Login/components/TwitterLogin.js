@@ -48,6 +48,10 @@ class TwitterLogin extends Component {
   _login = async () => {
     try {
       const result = await TwitterAuth.login()
+      const credential = firebase.auth.TwitterAuthProvider.credential(result.authToken, result.authTokenSecret);
+      const userData = await firebase.auth().signInWithCredential(credential);
+      console.log('User data\n' + JSON.stringify(userData, null, 2));
+
       console.log('User id:', JSON.stringify(result, null, 2));
       this.props.navigate('Categories');
     } catch (error) {
