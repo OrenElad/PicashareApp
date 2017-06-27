@@ -47,26 +47,26 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-  <key>Fabric</key>
-  <dict>
-    <key>APIKey</key>
-    <string>f8f7063c8996c8b07617a6365f9a3ba8c6454815</string>
-    <key>Kits</key>
-    <array>
-      <dict>
-        <key>KitInfo</key>
-        <dict>
-          <key>consumerKey</key>
-          <string>Xw6ctfP8ha7R6m0A36saR1PXm</string>
-          <key>consumerSecret</key>
-          <string>2ja2VySCMTKOP0sZ7W2b2LDwoSL5U0TqMEzDdvbGiZ4e52cw0t</string>
-        </dict>
-        <key>KitName</key>
-        <string>Twitter</string>
-      </dict>
-    </array>
-  </dict>
-  <key>FacebookAppID</key>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>e57dbf9c6a935b271efd992488bcbacb35ec2cb6</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>consume b   rKey</key>
+					<string>PxLuMowdN2PnSbaGmDm4OFTG1</string>
+					<key>consumerSecret</key>
+					<string>p8KE8QSW9uvdWZw3qnHdEzK02bukBvu9xfrRKNBwy3UX3genTh</string>
+				</dict>
+				<key>KitName</key>
+				<string>Twitter</string>
+			</dict>
+		</array>
+	</dict>
+	<key>FacebookAppID</key>
 	<string>358317097861350</string>
 	<key>FacebookDisplayName</key>
 	<string>Picashare</string>

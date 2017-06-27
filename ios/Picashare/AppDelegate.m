@@ -8,8 +8,8 @@
  */
 
 #import "AppDelegate.h"
-#import <Fabric/Fabric.h>
-#import <TwitterKit/TwitterKit.h>
+//#import <Fabric/Fabric.h>
+//#import <TwitterKit/TwitterKit.h>
 #import <React/RCTRootView.h>
 #import <React/RCTBundleURLProvider.h>
 
@@ -41,7 +41,7 @@
   [FIRApp configure];
   [[FBSDKApplicationDelegate sharedInstance] application:application
                            didFinishLaunchingWithOptions:launchOptions];
-    [Fabric with:@[[Twitter class]]];
+//    [Fabric with:@[[Twitter class]]];
   
   return YES;
 }

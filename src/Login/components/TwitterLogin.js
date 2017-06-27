@@ -3,8 +3,12 @@
  */
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
+import AUTH_PROVIDERS from '../../constants/appConfig';
+import TwitterAuth from 'tipsi-twitter'
+
 
 import {
+  AsyncStorage,
   NativeModules,
   AppRegistry,
   StyleSheet,
@@ -18,60 +22,49 @@ import {
   Alert
 } from 'react-native';
 
-const { TwitterSignin } = NativeModules;
-
-import AUTH_PROVIDERS from '../../constants/appConfig';
 
 class TwitterLogin extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+
   };
 
   componentWillMount(){
-
+     TwitterAuth.init({
+        twitter_key: AUTH_PROVIDERS.TWITTER.CONSUMER_KEY,
+        twitter_secret: AUTH_PROVIDERS.TWITTER.CONSUMER_SECRET,
+      })
+    // AsyncStorage.getItem('tokens')
+    //   .then((tokens) => {
+    //     if (tokens) {
+    //       this.handleTokens(JSON.parse(tokens));
+    //       console.log(tokens);
+    //     }
+    //   });
   };
 
 
-  async _login(){
-    let token = '',
-        secret = '',
-        credential = '';
-
-    let twitterPromise = new Promise((resolve, reject) => {
-      console.log('1111');
-      TwitterSignin.logIn(AUTH_PROVIDERS.TWITTER.CONSUMER_KEY, AUTH_PROVIDERS.TWITTER.CONSUMER_SECRET, (error, loginData) => {
-        console.log('2222');
-        if (!error) {
-          token = loginData.authToken;
-          secret = loginData.authTokenSecret;
-          console.log('login data' + token + ' - ' +secret);
-          resolve(token, secret);
-        } else {
-          Alert.alert('Invalid login', 'Unable to login');
-          reject(error +'\nUnable to login');
-        }
-      });
-    });
-
+  _login = async () => {
     try {
-      await twitterPromise;
-      console.log('3333');
-      if(token && secret) credential = firebase.auth.TwitterAuthProvider.credential(token, secret);
-      console.log('credential' + JSON.stringify(credential, null, 2));
-      const userData = await firebase.auth().signInWithCredential(credential);
-      console.log('userData' + JSON.stringify(userData.toJSON()));
-      if (userData === 'cancelled') {
-        console.log('Login cancelled');
-      } else {
-        // now signed in
-        console.log(`the user: ${JSON.stringify(userData.toJSON())}`);
-        this.props.navigate('Categories');
-      }
-    } catch(err) {
-      console.log(`Twitter Error: ${err}`);
+      const result = await TwitterAuth.login()
+      console.log('User id:', JSON.stringify(result, null, 2));
+      this.props.navigate('Categories');
+    } catch (error) {
+      console.log('Login error:', error)
     }
+  }
 
+
+  async _addUserToFirebase(){
+    // try {
+    //   const credential = await firebase.auth.TwitterAuthProvider.credential(this.state.tokens.consumerKey, this.state.tokens.consumerSecret);
+    //   const userData = await firebase.auth().signInWithCredential(credential);
+    //   console.log('User data\n' + JSON.stringify(userData, null, 2));
+    //   this.props.navigate('Categories');
+    // } catch (err) {
+    //   console.log('WRONG SIGNIN', err);
+    // };
   }
 
   _logout(){}

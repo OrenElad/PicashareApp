@@ -65,9 +65,9 @@ PODS:
   - FirebaseStorage (1.1.0):
     - FirebaseAnalytics (~> 3.7)
     - GTMSessionFetcher/Core (~> 1.1)
-  - Google/Core (3.0.3):
+  - Google/Core (3.1.0):
     - FirebaseAnalytics (~> 3.2)
-  - Google/SignIn (3.0.3):
+  - Google/SignIn (3.1.0):
     - Google/Core
     - GoogleSignIn (~> 4.0)
   - GoogleSignIn (4.0.2):
@@ -89,12 +89,12 @@ PODS:
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMOAuth2 (1.1.4):
     - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.1.9):
-    - GTMSessionFetcher/Full (= 1.1.9)
-  - GTMSessionFetcher/Core (1.1.9)
-  - GTMSessionFetcher/Full (1.1.9):
-    - GTMSessionFetcher/Core (= 1.1.9)
-  - Protobuf (3.2.1)
+  - GTMSessionFetcher (1.1.10):
+    - GTMSessionFetcher/Full (= 1.1.10)
+  - GTMSessionFetcher/Core (1.1.10)
+  - GTMSessionFetcher/Full (1.1.10):
+    - GTMSessionFetcher/Core (= 1.1.10)
+  - Protobuf (3.3.0)
   - TwitterCore (2.8.0):
     - Fabric
   - TwitterKit (2.8.1):
@@ -113,6 +113,7 @@ DEPENDENCIES:
   - Firebase/RemoteConfig
   - Firebase/Storage
   - Google/SignIn
+  - TwitterCore
   - TwitterKit
 
 SPEC CHECKSUMS:
@@ -129,15 +130,15 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 753d05a925e9eb8eadd09a0ffc9b808578b72fac
   FirebaseRemoteConfig: af3003f4e8daa2bd1d5cf90d3cccc1fe224f8ed9
   FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
-  Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
+  Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
-  GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
-  Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
+  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
 
-PODFILE CHECKSUM: dd33d73f754649ee53e707d5ce3e97fe641233e8
+PODFILE CHECKSUM: 6420dc978ab0d4fc6ee769f15295771df1c27380
 
 COCOAPODS: 1.2.1

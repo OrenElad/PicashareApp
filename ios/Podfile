@@ -21,7 +21,7 @@ target 'Picashare' do
   pod 'Google/SignIn'
   pod 'Fabric'
   pod 'TwitterKit'
-
+  pod 'TwitterCore'
 end
 
 target 'Picashare-tvOS' do

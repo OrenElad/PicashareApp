@@ -3,6 +3,8 @@ package com.picashare;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.gettipsi.reactnativetwittersdk.TwitterReactPackage;
+import ga.piroro.rnt.RNTPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.react.ReactNativeHost;
@@ -37,6 +39,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new TwitterReactPackage(),
+            new RNTPackage(),
           new RNGoogleSigninPackage(),
           new FBSDKPackage(mCallbackManager),
           new RNFirebasePackage(),
