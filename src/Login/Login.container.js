@@ -63,21 +63,19 @@ class Login extends Component {
 
   constructor(props) {
     super(props);
-
-  };
-
-  componentWillMount(){
-
+    this.state = {
+      user: null
+    }
   };
 
   componentWillReceiveProps(nextProps){
+          // this.isUserLoggedIn.bind(this) && this.props.navigation('Categories');
       // nextProps !== this.props && console.log(`--->>>> ${nextProps}`);
   };
 
   render() {
     const {navigate} = this.props.navigation;
-    return (
-      <View style={{flex:1,top: 30, flexDirection:'column',justifyContent:'space-around',alignItems:'center'}}>
+    return (<View style={{flex:1,top: 30, flexDirection:'column',justifyContent:'space-around',alignItems:'center'}}>
         <LoginPreview/>
         <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
           <FacebookLogin navigate={navigate} />

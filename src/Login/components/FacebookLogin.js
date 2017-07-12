@@ -23,13 +23,7 @@ import {
 class FacebookLogin extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   };
-
-  componentWillMount(){
-
-  };
-
 
   async _login() {
     try {

@@ -3,9 +3,9 @@
  */
 
 import React, { Component } from 'react';
-import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import {Map} from "immutable";
+import * as firebase from 'firebase';
 
 import { StackNavigator } from 'react-navigation';
 // import * as authActions from "../redux/categories/categories.action";
@@ -26,7 +26,10 @@ import {
 class Categories extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      userImage: null
+    };
+    this.userImage = '';
   };
 
   componentWillMount(){
@@ -37,11 +40,14 @@ class Categories extends Component {
     // nextProps !== this.props && console.log(`--->>>> ${nextProps}`);
   };
 
+  getUserImage() {
+  }
 
   render() {
     return (
       <View>
         <Text>Categories</Text>
+        <Image style={{width: 50, height: 50}} />
       </View>
 
     );
