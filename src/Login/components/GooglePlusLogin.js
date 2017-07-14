@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+import deviceStorage from 'react-native-simple-store';
 
 import {
   AppRegistry,
@@ -55,7 +56,8 @@ class GooglePlusLogin extends Component {
       const credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken);
       const userData = await firebase.auth().signInWithCredential(credential);
       console.log('User data\n' + JSON.stringify(userData, null, 2));
-      this.props.navigate('Categories');
+      deviceStorage.set('GooglePlusUserData', userData);
+      this.props.navigate('Categories', userDate);
       // this.props.actions.login({authProvider: userData.providerId, authData: userData});
     } catch (err) {
       console.log('WRONG SIGNIN', err);

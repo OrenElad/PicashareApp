@@ -10,6 +10,7 @@ import LoginPreview from './components/LoginPreview';
 import GooglePlusLogin from './components/GooglePlusLogin';
 import FacebookLogin from './components/FacebookLogin';
 import TwitterLogin from './components/TwitterLogin';
+import Spinner from 'react-native-spinkit';
 
 // import * as authActions from "../redux/auth/auth.action";
 import * as firebase from 'firebase';
@@ -23,7 +24,7 @@ import {
   View,
   Image,
   BackAndroid,
-  //Icon,
+  StatusBar,
   Alert
 } from 'react-native';
 
@@ -39,25 +40,12 @@ this.firebaseConfig = {
 this.firebaseApp = firebase.initializeApp(this.firebaseConfig);
 
 const {AUTH_PROVIDERS} = require("../constants/appConfig").default;
-// const actions = [authActions];
-// function mapStateToProps(state) {
-//   return {
-//     ...state
-//   };
-// }
 
-// function mapDispatchToProps(dispatch) {
-//   const creators = Map()
-//     .merge(...actions)
-//     .filter(value => typeof value === 'function')
-//     .toObject();
-
-//   return {
-//     actions: bindActionCreators(creators, dispatch),
-//     dispatch
-//   };
-// }
-
+const MyStatusBar = ({backgroundColor, ...props}) => (
+  <View style={[styles.statusBar, { backgroundColor }]}>
+    <StatusBar backgroundColor={backgroundColor} {...props} />
+  </View>
+);
 
 class Login extends Component {
 
@@ -75,20 +63,40 @@ class Login extends Component {
 
   render() {
     const {navigate} = this.props.navigation;
-    return (<View style={{flex:1,top: 30, flexDirection:'column',justifyContent:'space-around',alignItems:'center'}}>
+    return (<View style={styles.container}>
+      <MyStatusBar backgroundColor="#209AE7" barStyle="light-content"  />
+      <View style={{alignSelf: 'flex-start'}}>
         <LoginPreview/>
-        <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
+        <View style={styles.logins}>
           <FacebookLogin navigate={navigate} />
           <GooglePlusLogin navigate={navigate} />
           <TwitterLogin navigate={navigate} />
+        </View>
         </View>
       </View>
     );
   }
 }
 
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 10 : 0;
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    //top: 30,
+    flexDirection:'column',
+    justifyContent:'space-around',
+    alignItems:'center',
+    backgroundColor: 'white'
+  },
+  logins: {
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  statusBar: {
+    height: STATUSBAR_HEIGHT,
+  },
 
 });
 

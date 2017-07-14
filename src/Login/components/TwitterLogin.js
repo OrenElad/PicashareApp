@@ -3,8 +3,11 @@
  */
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
+import deviceStorage from 'react-native-simple-store';
+
 import AUTH_PROVIDERS from '../../constants/appConfig';
 import TwitterAuth from 'tipsi-twitter'
+import Spinner from 'react-native-spinkit';
 
 
 import {
@@ -26,49 +29,37 @@ import {
 class TwitterLogin extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-
-  };
+    this.state = {
+      isVisible: false,
+      type: 'Wave',
+      size: 100,
+      color: "#FFFFFF",
+    };
+  }
 
   componentWillMount(){
      TwitterAuth.init({
         twitter_key: AUTH_PROVIDERS.TWITTER.CONSUMER_KEY,
         twitter_secret: AUTH_PROVIDERS.TWITTER.CONSUMER_SECRET,
       })
-    // AsyncStorage.getItem('tokens')
-    //   .then((tokens) => {
-    //     if (tokens) {
-    //       this.handleTokens(JSON.parse(tokens));
-    //       console.log(tokens);
-    //     }
-    //   });
   };
 
-
+componentWillUnmount() {
+  this.setState({isVisible: false})
+}
   _login = async () => {
     try {
+      this.setState({isVisible: true})
       const result = await TwitterAuth.login()
       const credential = firebase.auth.TwitterAuthProvider.credential(result.authToken, result.authTokenSecret);
       const userData = await firebase.auth().signInWithCredential(credential);
       console.log('User data\n' + JSON.stringify(userData, null, 2));
-
+      // deviceStorage.set('TwitterUserData', userData);
       console.log('User id:', JSON.stringify(result, null, 2));
-      this.props.navigate('Categories');
+      userDate && this.props.navigate('Categories', userDate);
     } catch (error) {
       console.log('Login error:', error)
     }
-  }
-
-
-  async _addUserToFirebase(){
-    // try {
-    //   const credential = await firebase.auth.TwitterAuthProvider.credential(this.state.tokens.consumerKey, this.state.tokens.consumerSecret);
-    //   const userData = await firebase.auth().signInWithCredential(credential);
-    //   console.log('User data\n' + JSON.stringify(userData, null, 2));
-    //   this.props.navigate('Categories');
-    // } catch (err) {
-    //   console.log('WRONG SIGNIN', err);
-    // };
   }
 
   _logout(){}
@@ -76,6 +67,12 @@ class TwitterLogin extends Component {
   render() {
     return (
       <TouchableOpacity onPress={this._login.bind(this)}>
+        <Spinner 
+          style={styles.spinner} 
+          isVisible={this.state.isVisible} 
+          size={this.state.size} 
+          type={this.state.type} 
+          color={this.state.color}/>
         <Image
           style={styles.button}
           source={require('../../assets/Login/twitter-login.png')}
@@ -97,7 +94,11 @@ var styles = StyleSheet.create({
     height: 50,
     left: 5,
     bottom:50
-  }
+  },
+  spinner: {
+    marginBottom: 50
+  },
+
 });
 
 

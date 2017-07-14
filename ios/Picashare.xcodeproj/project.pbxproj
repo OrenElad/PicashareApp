@@ -42,6 +42,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		89DAE2489FB1EC92E4AE6E32 /* libPods-Picashare-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE0698198E4C66389574676 /* libPods-Picashare-tvOS.a */; };
 		99F27EAFC0FD4344A2F16F68 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082DF74445A847A9AE12C426 /* AddressBook.framework */; };
+		BA05F7B81F16C0F000DF08BF /* libRNSpinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA05F7B41F16C0BB00DF08BF /* libRNSpinkit.a */; };
 		BA498EE51EBBB217000B7C11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA498EE41EBBB217000B7C11 /* GoogleService-Info.plist */; };
 		BA498F121EBBC6A6000B7C11 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA498F041EBBB5D6000B7C11 /* libRNFirebase.a */; };
 		BA498F631EBBD0DD000B7C11 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA498F5F1EBBD0DD000B7C11 /* FBSDKShareKit.framework */; };
@@ -245,6 +246,20 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		BA05F7B31F16C0BB00DF08BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA05F7931F16C0BA00DF08BF /* RNSpinkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D42CB3511B2538DE00FD0AE2;
+			remoteInfo = RNSpinkit;
+		};
+		BA05F7B51F16C0BB00DF08BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA05F7931F16C0BA00DF08BF /* RNSpinkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 641194871EC9FD4A00D4FC03;
+			remoteInfo = "RNSpinkit-tvOS";
+		};
 		BA498F031EBBB5D6000B7C11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BA498EFF1EBBB5D4000B7C11 /* RNFirebase.xcodeproj */;
@@ -321,6 +336,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		88AB4FA4C821481486591F95 /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGoogleSignin.xcodeproj; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; };
 		9A762AD2D00CE984720DE625 /* Pods-Picashare-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Picashare-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Picashare-tvOS/Pods-Picashare-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BA05F7931F16C0BA00DF08BF /* RNSpinkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSpinkit.xcodeproj; path = "../node_modules/react-native-spinkit/ios/RNSpinkit.xcodeproj"; sourceTree = "<group>"; };
 		BA4955E4DFE74B8389FD4F2A /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BA498EE41EBBB217000B7C11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA498EFF1EBBB5D4000B7C11 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
@@ -348,6 +364,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA05F7B81F16C0F000DF08BF /* libRNSpinkit.a in Frameworks */,
 				BA498F121EBBC6A6000B7C11 /* libRNFirebase.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				BA498F651EBBD0DD000B7C11 /* FBSDKCoreKit.framework in Frameworks */,
@@ -563,6 +580,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BA05F7931F16C0BA00DF08BF /* RNSpinkit.xcodeproj */,
 				BA498EFF1EBBB5D4000B7C11 /* RNFirebase.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -612,6 +630,15 @@
 				00E356EE1AD99517003FC87E /* PicashareTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* Picashare-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* Picashare-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA05F7941F16C0BA00DF08BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA05F7B41F16C0BB00DF08BF /* libRNSpinkit.a */,
+				BA05F7B61F16C0BB00DF08BF /* libRNSpinkit.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -851,6 +878,10 @@
 					ProjectRef = 88AB4FA4C821481486591F95 /* RNGoogleSignin.xcodeproj */;
 				},
 				{
+					ProductGroup = BA05F7941F16C0BA00DF08BF /* Products */;
+					ProjectRef = BA05F7931F16C0BA00DF08BF /* RNSpinkit.xcodeproj */;
+				},
+				{
 					ProductGroup = BA7BE4B21F02D6110074BC6C /* Products */;
 					ProjectRef = 11E5CFF293A04FD7A0689499 /* TPSTwitterModule.xcodeproj */;
 				},
@@ -1039,6 +1070,20 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BA05F7B41F16C0BB00DF08BF /* libRNSpinkit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSpinkit.a;
+			remoteRef = BA05F7B31F16C0BB00DF08BF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BA05F7B61F16C0BB00DF08BF /* libRNSpinkit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSpinkit.a;
+			remoteRef = BA05F7B51F16C0BB00DF08BF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		BA498F041EBBB5D6000B7C11 /* libRNFirebase.a */ = {

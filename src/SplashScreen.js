@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
+import Spinner from 'react-native-spinkit';
 
 import {
   AppRegistry,
@@ -23,14 +24,20 @@ import {
 class SplashScreen extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+          isVisible: true,
+          type: 'CircleFlip',
+          size: 100,
+          color: "#FFFFFF",
+        }
     };
 
     componentWillMount() {
       const {navigate} = this.props.navigation;
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          console.log(`USER: ${JSON.stringify(user, null, 2)}`)
-          navigate('Categories');
+      firebase.auth().onAuthStateChanged(function(userData) {
+        if (userData) {
+          console.log(`USER: ${JSON.stringify(userData, null, 2)}`)
+          navigate('Categories', userData);
         } else {
           navigate('Login')
         }
@@ -39,8 +46,37 @@ class SplashScreen extends Component {
 
 
   render() {
-    return (<View/>);
+    return (<View>
+              <Spinner 
+                style={styles.spinner} 
+                isVisible={this.state.isVisible} 
+                size={this.state.size} 
+                type={this.state.type} 
+                color={this.state.color}/>
+            </View>);
   }
 }
+
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#d35400',
+  },
+
+  spinner: {
+    marginBottom: 50
+  },
+
+  btn: {
+    marginTop: 20
+  },
+
+  text: {
+    color: "white"
+  }
+});
+
 
 export default SplashScreen;

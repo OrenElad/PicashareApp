@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
+import deviceStorage from 'react-native-simple-store';
 
 import {
   AppRegistry,
@@ -44,7 +45,8 @@ class FacebookLogin extends Component {
       } else {
         // now signed in
         console.log(`the user: ${JSON.stringify(userData.toJSON())}`);
-        this.props.navigate('Categories');
+        deviceStorage.set('FacebookUserData', userData);
+        this.props.navigate('Categories', userDate);
       }
     } catch (err) {
       console.log(`Login fail with error: ${error}`);
