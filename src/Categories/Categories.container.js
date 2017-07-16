@@ -50,7 +50,7 @@ class Categories extends Component {
     return (
       <View style={styles.container}>
         {params.displayName && <Text>{params.displayName}</Text>}
-        {userImage && <Image style={{width: 50, height: 50}} source={{uri: `${userImage}`}}/>}
+        {userImage && <Image style={{width: 50, height: 50}} source={{uri: userImage.replace(/^http:\/\//i, 'https://')}}/>}
       </View>
 
     );

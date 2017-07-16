@@ -4,7 +4,6 @@
 import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
-import Spinner from 'react-native-spinkit';
 
 import {
   AppRegistry,
@@ -28,7 +27,7 @@ class SplashScreen extends Component {
           isVisible: true,
           type: 'CircleFlip',
           size: 100,
-          color: "#FFFFFF",
+          color: "#209AE7",
         }
     };
 
@@ -47,12 +46,6 @@ class SplashScreen extends Component {
 
   render() {
     return (<View>
-              <Spinner 
-                style={styles.spinner} 
-                isVisible={this.state.isVisible} 
-                size={this.state.size} 
-                type={this.state.type} 
-                color={this.state.color}/>
             </View>);
   }
 }
@@ -64,11 +57,6 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#d35400',
   },
-
-  spinner: {
-    marginBottom: 50
-  },
-
   btn: {
     marginTop: 20
   },

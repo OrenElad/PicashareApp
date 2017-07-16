@@ -49,6 +49,7 @@ componentWillUnmount() {
 }
   _login = async () => {
     try {
+      this.props.toggleSpinner // TODO
       this.setState({isVisible: true})
       const result = await TwitterAuth.login()
       const credential = firebase.auth.TwitterAuthProvider.credential(result.authToken, result.authTokenSecret);
