@@ -49,8 +49,7 @@ class Categories extends Component {
     const userImage = params.photoURL;
     return (
       <View style={styles.container}>
-        {params.displayName && <Text>{params.displayName}</Text>}
-        {userImage && <Image style={{width: 50, height: 50}} source={{uri: userImage.replace(/^http:\/\//i, 'https://')}}/>}
+        {userImage && <Image style={styles.userImage} source={{uri: userImage.replace(/^http:\/\//i, 'https://')}}/>}
       </View>
 
     );
@@ -60,10 +59,16 @@ class Categories extends Component {
 var styles = StyleSheet.create({
  container: {
     flex:1,
-    flexDirection:'column',
-    justifyContent:'space-around',
-    alignItems:'center',
+    flexDirection:'row',
+    justifyContent:'flex-start',
+    alignItems:'flex-start',
     backgroundColor: 'white'
+  },
+  userImage: {
+    left:5,
+    width: 50, 
+    height: 50,
+    borderRadius: 50
   }
 });
 
